@@ -7,7 +7,7 @@
 			<c:forEach var="movie" items="${movies}">
 
 				<div class="card col-sm-3">
-					<a href="/movies/name/${movie.getId() }" class="thumbnail"> <img
+					<a href="/movies/movie/${movie.getId() }" class="thumbnail"> <img
 						style="height: 280px; width: 100%; width: 224px; display: block; float: center; padding: .75rem; border: 0;"
 						src=${movie.getPosterUrl()	}
 						class="img-responsive img-thumbnail rounded hoverable"

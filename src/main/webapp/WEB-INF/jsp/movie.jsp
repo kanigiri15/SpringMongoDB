@@ -36,7 +36,7 @@
 				</div>
 			</div>
 			<div class="ava_video_info_bottom hidden-xs">
-				<div class="ava_video_info_element ava_ellipsis">Cast: <c:forEach var="actor" items="${movie.getActors()}">${actor}, </c:forEach></div>
+				<div class="ava_video_info_element ava_ellipsis">Cast: <c:forEach var="actor" items="${movie.getActors()}"><a href="/movies/actor/${actor}">${actor},</a> </c:forEach></div>
 			</div>
 		</div>
 	</div>

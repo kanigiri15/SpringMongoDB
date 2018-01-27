@@ -6,6 +6,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.TrailAndTry.SpringMongoDB.SpringMongoDB.Service.MovieService;
 
@@ -25,17 +26,23 @@ public class MovieController {
 		model.put("movies", movieService.serchMoviesLike(searchTerm));
 		return "movies";
 	}
-	/*
 
-	@RequestMapping(value="/movies/{searchTerm}",method = RequestMethod.POST)
-	public String searchMovies(HttpServletRequest request, ModelMap model) {
-		model.put("movies", movieService.serchMoviesLike(request.getParameter("searchTerm")));
+	@RequestMapping(value="/movies",method = RequestMethod.POST)
+	public String searchMovies(@RequestParam("movieName") String movieName, ModelMap model) {
+		model.put("movies", movieService.serchMoviesLike(movieName));
 		return "movies";
-	}*/
+	}
 
-	@RequestMapping(value="/movies/name/{objId}",method = RequestMethod.GET)
+	@RequestMapping(value="/movies/movie/{objId}",method = RequestMethod.GET)
 	public String showMovie(@PathVariable("objId") String objId, ModelMap model) {
 		model.put("movie", movieService.serchMovie(objId));
 		return "movie";
+	}
+
+	@RequestMapping(value="/movies/actor/{name}",method = RequestMethod.GET)
+	public String showActorMovies(@PathVariable("name") String name, ModelMap model) {
+		model.put("movies", movieService.searchActorMovie(name));
+		
+		return "movies";
 	}
 }

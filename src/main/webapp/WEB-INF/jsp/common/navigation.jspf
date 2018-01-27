@@ -12,7 +12,7 @@
 		<ul class="nav navbar-nav navbar-right">
 			<li><a href="/login">Logout</a></li>
 		</ul>
-		<form class="navbar-form navbar-left" action="/movies/">
+		<form class="navbar-form navbar-left" action="/movies" method="post">
 			<div class="form-group">
 				<input type="text" name="movieName" class="form-control" placeholder="Search">
 			</div>

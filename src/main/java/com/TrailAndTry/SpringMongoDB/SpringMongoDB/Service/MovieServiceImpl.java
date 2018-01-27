@@ -25,7 +25,13 @@ public class MovieServiceImpl implements MovieService {
 	}
 
 	@Override
+	public List<Movie> searchActorMovie(String actorName) {
+		return movieDao.getActorMovies(actorName);
+	}
+
+	@Override
 	public Movie serchMovie(String id) {
 		return movieDao.getMovie(id);
 	}
+	
 }

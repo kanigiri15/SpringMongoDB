@@ -8,4 +8,5 @@ public interface MovieDAO {
 	public List<Movie> AllMovies();
 	public List<Movie> getMoviesLike(String name);
 	public Movie getMovie(String name);
+	public List<Movie> getActorMovies(String actorName);
 }
